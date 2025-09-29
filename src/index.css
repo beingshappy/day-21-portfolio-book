@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-0 {
+    transform: rotateY(0deg);
+  }
+
+  .-rotate-y-180 {
+    transform: rotateY(-180deg);
+  }
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Animation classes */
+.page-flip-enter {
+  transform: rotateY(90deg);
+}
+
+.page-flip-enter-active {
+  transform: rotateY(0deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.page-flip-exit {
+  transform: rotateY(0deg);
+}
+
+.page-flip-exit-active {
+  transform: rotateY(-90deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Book styling */
+.book-container {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .perspective-1000 {
+    perspective: 800px;
+  }
+}
+
+/* Hover effects for interactive elements */
+.hover-lift {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Focus styles for accessibility */
+.focus-ring:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
